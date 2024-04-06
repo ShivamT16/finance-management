@@ -26,6 +26,32 @@ const initialState = {
             ...state,
             loading:true
         }
+      case "FETCH_EXPENSES_SUCCESS":
+        return{
+            ...state,
+            expenses: action.payload,
+            loading: false,
+            error: null
+        }
+      case "FETCH_EXPENSES_FAILURE":
+        return{
+            ...state,
+            loading: false,
+            error:'Error fetching expense data'
+        }
+      case "FETCH_SAVINGS_SUCCESS":
+        return{
+            ...state,
+            savings: action.payload,
+            loading: false,
+            error: null
+        }
+      case "FETCH_SAVINGS_FAILURE":
+        return{
+            ...state,
+            loading: false,
+            error: 'Error fetching savings data'
+        }
       default: 
         return state
     }

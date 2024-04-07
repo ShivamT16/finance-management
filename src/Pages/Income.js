@@ -1,6 +1,6 @@
-import { useEffect } from "react"
+import React, { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { fetchIncome } from "./actions"
+import { fetchIncome } from "../actions"
 
 export const Income = () => {
     const dispatch = useDispatch()
@@ -8,7 +8,8 @@ export const Income = () => {
     
     const totalIncome = income.reduce((acc, curr) => curr.amount + acc, 0 )
 
-    useEffect(() => {fetchIncome()}, [dispatch])
+    useEffect(() => {
+        dispatch(fetchIncome())}, [dispatch])
 
     return(
         <div>

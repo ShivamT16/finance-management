@@ -1,19 +1,37 @@
 import './App.css';
 import React from "react";
-import { Provider } from "react-redux";
-import store from "./store";
-import IncomeExpenseForm from "./IncomeExpenseForm";
-import FinanceSummary from "./FinanceSummary";
+import {BrowserRouter as Router, Routes, Route, NavLink} from "react-router-dom"
+import IncomeExpenseForm from "./Pages/IncomeExpenseForm";
+// import FinanceSummary from "./Pages/FinanceSummary";
+import {Income} from "./Pages/Income"
+import { Expense } from './Pages/Expense';
+import { Savings } from './Pages/Savings';
+import { Dashboard } from './Pages/Dashboard';
 
 function App() {
   return (
-    <Provider store={store}>
+    
       <div className="App">
-      <h1>Redux</h1>
-        <IncomeExpenseForm />
-        <FinanceSummary />
+     <Router>
+      <div>
+        <nav>
+        <NavLink to="/">New Entries</NavLink>
+        <NavLink to="income" >Income</NavLink>
+        <NavLink to="expenses" >Expenses</NavLink>
+        <NavLink to="savings" >Savings</NavLink>
+        <NavLink to="dashboard">Finance Summary</NavLink>
+        </nav>
+
+        <Routes>
+          <Route path="/" element={<IncomeExpenseForm />} />
+          <Route path="/income" element={<Income />} />
+          <Route path="/savings" element={<Savings />} />
+          <Route path="/expenses" element={<Expense />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
       </div>
-    </Provider>
+     </Router>
+      </div>
   );
 }
 

@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { fetchExpenses } from "./actions"
+import { fetchExpenses } from "../actions"
 
 export const Expense = () => {
     const dispatch = useDispatch()

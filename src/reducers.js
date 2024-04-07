@@ -52,6 +52,37 @@ const initialState = {
             loading: false,
             error: 'Error fetching savings data'
         }
+      case "ADD_ENTRY_SUCCESS":
+          if (action.payload.entryType === "income") {
+        return{    
+            ...state,
+            income: [...state.income, action.payload],
+            loading: false,
+            error:null }
+          }
+          else if (action.payload.entryType === "expense") {
+            return{
+              ...state,
+              expenses: [...state.expenses, action.payload],
+              loading: false,
+              error: null
+            };
+          }
+          else{
+            return {
+              ...state,
+              savings: [...state.savings, action.payload ],
+              loading: false,
+              error: null
+            }
+          }
+        case "ADD_ENTRY_FAILURE":
+          return{
+            ...state,
+            loading: false,
+            error: "Error fetching or adding data"
+          }
+        
       default: 
         return state
     }

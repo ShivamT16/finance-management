@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { fetchSavings } from "./actions"
+import { fetchSavings } from "../actions"
 
 export const Savings = () => {
 
@@ -9,7 +9,7 @@ export const Savings = () => {
 
     const totalSavings = savings.reduce((acc, curr) => curr.amount + acc, 0)
 
-    useEffect(() => {fetchSavings()}, [dispatch] )
+    useEffect(() => {dispatch(fetchSavings())}, [dispatch] )
 
     return(
         <div>

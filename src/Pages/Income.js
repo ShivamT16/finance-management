@@ -12,17 +12,17 @@ export const Income = () => {
         dispatch(fetchIncome())}, [dispatch])
 
     return(
-        <div>
+        <div className="entry-page">
             <h1>Income Page</h1>
             {
                 income.map((transaction,index) => (
-                    <li key={index} >
+                    <li className="list" key={index} >
                         {transaction.description}: ${transaction.amount}
                     </li>
                 ) )
             }
             <h2>Summary</h2>
-            <h4>Toatl Income: ${totalIncome} </h4>
+            <p className="list"><strong>Total Income:</strong> ${totalIncome} </p>
         </div>
     )
 }

@@ -51,11 +51,11 @@ export const Dashboard = () => {
     }
 
     return(
-        <div className='report'>
-         <h2>Financial Reports</h2>
-      <div>
-        <label>Select Report Type:</label>
-        <select
+        <div className="entry-page">
+         <h1>Financial Reports</h1>
+      <div className="label">
+        <p>Select Report Type:</p>
+        <select className="input"
           value={reportType}
           onChange={(e) => setReportType(e.target.value)}
         >
@@ -69,8 +69,8 @@ export const Dashboard = () => {
           
           {report.totalIncome > 0 && reportType === 'incomeVsExpenses' && (
             <div>
-              <h3> Report</h3>
-              <div>
+              <h2> Report</h2>
+              <div className="list">
                 <p>Total Income: ${report.totalIncome}</p>
                 <p>Total Expenses: ${report.totalExpenses}</p>
                 <p>Savings: ${report.savings}</p>
@@ -83,7 +83,7 @@ export const Dashboard = () => {
                 <h4>Expense Breakdown:</h4>
                 <ul>
                   {Object.keys(report.expenseBreakdown).map((category, index) => (
-                    <li key={index}>
+                    <li className="list" key={index}>
                       {category}: ${report.expenseBreakdown[category]}
                     </li>
                   ))}

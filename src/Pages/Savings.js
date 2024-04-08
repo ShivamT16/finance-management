@@ -12,17 +12,17 @@ export const Savings = () => {
     useEffect(() => {dispatch(fetchSavings())}, [dispatch] )
 
     return(
-        <div>
+        <div className="entry-page">
             <h1>Savings Page</h1>
             {
                 savings.map((transaction, index) => 
-                <li key={index}>
+                <li className="list" key={index}>
                     {transaction.description}: ${transaction.amount}
                 </li>
                 )
             }
             <h2>Summary</h2>
-            <h4>Total Savings: ${totalSavings} </h4>
+            <p className="list"><strong>Total Savings:</strong> ${totalSavings} </p>
         </div>
     )
 }

@@ -14,12 +14,12 @@ function App() {
       <div className="App">
      <Router>
       <div>
-        <nav>
-        <NavLink to="/">New Entries</NavLink>
-        <NavLink to="income" >Income</NavLink>
-        <NavLink to="expenses" >Expenses</NavLink>
-        <NavLink to="savings" >Savings</NavLink>
-        <NavLink to="dashboard">Finance Summary</NavLink>
+        <nav className='Navigation' >
+        <NavLink className="link" to="/">New Entries</NavLink>
+        <NavLink className="link" to="income" >Income</NavLink>
+        <NavLink className="link" to="expenses" >Expenses</NavLink>
+        <NavLink className="link" to="savings" >Savings</NavLink>
+        <NavLink className="link" to="dashboard">Finance Summary</NavLink>
         </nav>
 
         <Routes>

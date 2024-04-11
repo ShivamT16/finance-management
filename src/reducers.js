@@ -5,7 +5,7 @@ const initialState = {
     loading: false,
     error: null,
   };
-  
+
   const financeReducer = (state = initialState, action) => {
     switch (action.type) {
       case "FETCH_INCOME_SUCCESS":
